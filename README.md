@@ -9,4 +9,4 @@ slmpm is the package manager for SoftLeader microservices
 - `$ slmpm init` - initial `package.yaml` & `.gitignore`
 - `$ slmpm install --save <repo ...>` - to clone repo & save to `package.yaml`
 - `$ slmpm install` - to clone all repo by `package.yaml`
-- `$ slmpm uninstall --save <repo ...>` - remove the repositories
+- `$ slmpm uninstall --save <repo ...>` - remove the repositories & save to `package.yaml`
