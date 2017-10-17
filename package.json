@@ -1,0 +1,31 @@
+{
+  "name": "repository-package-manager",
+  "version": "1.0.0",
+  "description": "rpm is the repository package manager for GitHub, inspired by npm",
+  "bin": {
+    "rpm": "index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softleader/repository-package-manager.git"
+  },
+  "author": "Matt S.Y. Ho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softleader/repository-package-manager/issues"
+  },
+  "homepage": "https://github.com/softleader/repository-package-manager#readme",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "fs-extra": "^4.0.2",
+    "gh-got": "^6.0.0",
+    "homedir": "^0.6.0",
+    "js-yaml": "^3.10.0",
+    "promisify": "0.0.3",
+    "promisify-node": "^0.4.0"
+  }
+}
