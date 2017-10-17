@@ -1,12 +1,12 @@
-# softleader-container-package-manager
+# repository-package-manager
 
-cpm is the container package manager for SoftLeader microservices
+rpm is the repository package manager for GitHub
 
 ## Features
 
-- `$ cpm login <token>` - to save GitHub access token for slmpm
-- `$ cpm search [repo]` - to serch repository on softleader & softleader-product github, shows branches & tags
-- `$ cpm init` - initial `package.yaml` & `.gitignore`
-- `$ com install --save <repo ...>` - to clone repo & save to `package.yaml`
-- `$ cpm install` - to clone all repo by `package.yaml`
-- `$ cpm uninstall --save <repo ...>` - remove the repositories & save to `package.yaml`
+- `$ rpm remote --token <token> <repo ...>` - to save remotes & GitHub access token for cpm
+- `$ rpm search [repo]` - to serch repository on softleader & softleader-product github, shows branches & tags
+- `$ rpm init` - initial `package.yaml` & `.gitignore`
+- `$ rpm install --save <repo ...>` - to clone repo & save to `package.yaml`
+- `$ rpm install` - to clone all repo by `package.yaml`
+- `$ rpm uninstall --save <repo ...>` - remove the repositories & save to `package.yaml`
