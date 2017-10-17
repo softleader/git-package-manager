@@ -1,4 +1,4 @@
-# softleader-container-manager
+# softleader-container-package-manager
 
 cpm is the container package manager for SoftLeader microservices
 
