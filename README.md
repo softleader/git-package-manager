@@ -1,4 +1,4 @@
-# softleader-microservice-package-manager
+# softleader-container-manager
 
 slmpm is the package manager for SoftLeader microservices
 
