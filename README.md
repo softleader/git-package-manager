@@ -2,7 +2,7 @@
 
 rpm is the repository package manager for GitHub, inspired by npm
 
-Install
+## Install
 
 Clone and install via npm
 
