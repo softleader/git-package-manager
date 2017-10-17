@@ -1,6 +1,6 @@
 # repository-package-manager
 
-rpm is the repository package manager for GitHub
+rpm is the repository package manager for GitHub, inspired by npm
 
 ## Features
 
