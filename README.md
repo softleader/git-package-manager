@@ -14,8 +14,8 @@ $ npm install -g
 
 ## Features
 
-- `$ rpm remote --token <token> <user>` - to save remotes & GitHub access token for cpm
-- `$ rpm search [repo]` - to serch repository on regiested user's github, shows branches & tags
+- `$ rpm remote --token <token> <user>` - to save user/organization & GitHub access token
+- `$ rpm search [repo]` - to serch repository on regiested user/organization's github, shows branches & tags
 - `$ rpm init` - initial `package.yaml` & `.gitignore`
 - `$ rpm install --save [repo ...]` - to clone repo & save to `package.yaml`
 - `$ rpm install` - to clone all repo by `package.yaml`
