@@ -5,6 +5,7 @@ var fs = require("fs-extra");
 var pjson = require('./package.json');
 var remote = require('./lib/remote');
 var dependencies = require('./lib/dependencies');
+var config = require('./lib/config');
 var entry = Object.keys(pjson.bin)[0];
 
 function collect(val, collection) {
@@ -16,38 +17,42 @@ function bool(val) {
   return val == 'true';
 }
 
-program
-.command('remote <repository...>')
-.description('Add remote & token')
-.option('-t, --token <token>', 'token to access the remote')
-.action(remote.add);
+program.command('init')
+  .description('Set init properties')
+  .action(config.init);
 
 program
-.command('search [repository]')
-.description('Searches repository in remotes')
-.action(remote.search);
+  .command('remote <repository...>')
+  .description('Add remote & token')
+  .option('-t, --token <token>', 'token to access the remote')
+  .action(remote.add);
 
 program
-.command('install [repository...]')
-.option('--save', 'save changes to package.yaml', false)
-.description('Install repository')
-.action(dependencies.install);
+  .command('search [repository]')
+  .description('Searches repository in remotes')
+  .action(remote.search);
 
 program
-.command('uninstall <repository...>')
-.option('--save', 'save changes to package.yaml', false)
-.description('Uninstall repository')
-.action(dependencies.uninstall);
+  .command('install [repository...]')
+  .option('--save', 'save changes to package.yaml', false)
+  .description('Install repository')
+  .action(dependencies.install);
 
 program
-.command('*')
-.action(cmd => console.log('%s: \'' + cmd + '\' is not a valid command. See \'%s --help\'.', entry, entry));
+  .command('uninstall <repository...>')
+  .option('--save', 'save changes to package.yaml', false)
+  .description('Uninstall repository')
+  .action(dependencies.uninstall);
 
 program
-.on('--help', () => {
-  console.log();
-  console.log('  %s', pjson.homepage);
-  console.log();
-})
-.version(pjson.version)
-.parse(process.argv);
+  .command('*')
+  .action(cmd => console.log('%s: \'' + cmd + '\' is not a valid command. See \'%s --help\'.', entry, entry));
+
+program
+  .on('--help', () => {
+    console.log();
+    console.log('  %s', pjson.homepage);
+    console.log();
+  })
+  .version(pjson.version)
+  .parse(process.argv);
