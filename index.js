@@ -1,46 +1,35 @@
 #!/usr/bin/env node
 
-var program = require('commander');
-var fs = require("fs-extra");
-var pjson = require('./package.json');
-var remote = require('./lib/remote');
-var dependencies = require('./lib/dependencies');
-var config = require('./lib/config');
-var entry = Object.keys(pjson.bin)[0];
-
-function collect(val, collection) {
-  collection.push(val);
-  return collection;
-}
-
-function bool(val) {
-  return val == 'true';
-}
-
-program.command('init')
-  .description('Set init properties')
-  .action(config.init);
+const program = require('commander');
+const pjson = require('./package.json');
+const remote = require('./lib/remote');
+const dependencies = require('./lib/dependencies');
+const config = require('./lib/config');
+const entry = Object.keys(pjson.bin)[0];
 
 program
-  .command('remote <repository...>')
-  .description('Add remote & token')
-  .option('-t, --token <token>', 'token to access the remote')
+  .command('remote')
+  .description('Set remote & token')
   .action(remote.add);
 
-program
-  .command('search [repository]')
-  .description('Searches repository in remotes')
-  .action(remote.search);
+program.command('init')
+  .description('Set init yaml')
+  .action(config.init);
+
+// program
+//   .command('search [repository]')
+//   .description('Searches repository in remotes')
+//   .action(remote.search);
 
 program
   .command('install [repository...]')
-  .option('--save', 'save changes to package.yaml', false)
+  // .option('--save', 'save changes to package.yaml', false)
   .description('Install repository')
   .action(dependencies.install);
 
 program
   .command('uninstall <repository...>')
-  .option('--save', 'save changes to package.yaml', false)
+  // .option('--save', 'save changes to package.yaml', false)
   .description('Uninstall repository')
   .action(dependencies.uninstall);
 
