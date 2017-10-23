@@ -63,7 +63,7 @@ $ rpm remote --token ooo softleader softleader-project
 
 ### init
 
-產生 `package.yaml`
+法以互動式的指令產生 `package.yaml`
 
 ```
 $ rpm init
@@ -81,6 +81,7 @@ version: 1.0.0
 description: demo
 dependencies:
   - {user or organization}/{repository}: {tag}
+  - ...
 ```
 
 我們使用跟 npm 相同的 [node-semver](https://github.com/npm/node-semver) library 做 *{tag}*  的 parsing, 因此你可以:
