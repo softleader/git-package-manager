@@ -24,7 +24,7 @@ program
 
 program
   .command('uninstall <repository...>')
-  .description('Remove a repository <user or organization>/<repository>[@tag]')
+  .description('Remove a repository <user or organization>/<repository>')
   .action(dependencies.uninstall);
 
 program
