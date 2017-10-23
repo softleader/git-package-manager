@@ -78,7 +78,8 @@ dependencies:
 我們預設使用跟 npm 相同的 [node-semver](https://github.com/npm/node-semver) library 做 *{tag}*  的 parsing, 因此你可以:
 
 - 指定切確 tag: `v1.0.7`
-- 指定 range: `>=v1.0.0 <v1.1.0`
+- 指定 range: `v1.0.x` := `>=v1.0.0 <v1.1.0`
+- 自定義 range: `>=v1.0.0 <v1.1.7`
 
 > 建議研讀 [node-semver#readme](https://github.com/npm/node-semver#readme) 了解更多的控制
 
