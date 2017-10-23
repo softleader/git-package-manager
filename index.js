@@ -8,7 +8,8 @@ const config = require('./lib/config');
 const entry = Object.keys(pjson.bin)[0];
 
 program
-  .command('remote')
+  .command('remote [remote...]')
+  .option('-t, --token [token]', 'Access token for remotes')
   .description('Save GitHub remote & access token')
   .action(remote.add);
 
