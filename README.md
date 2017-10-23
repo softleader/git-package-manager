@@ -41,7 +41,7 @@ $ rpm --help
   
 ### remote
 
-當你要操作 private repository 前, 你必須要加好 remote 及其 access token:
+當你要操作 private repository )前, 你必須要加好 remote 及其 access token:
 
 ```
 $ rpm remote
@@ -52,6 +52,8 @@ $ rpm remote
 *Access token* 產生方式請參考 [Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), 請確認要給予 ***repo*** 的所有權限
 
 產生好了以後會在 home 產生 *.rpm* 名稱的檔案, 你可以備份此檔已保留加過的 token
+
+> 如果是 public repository 就不需要加入 remote
 
 ### init
 
@@ -114,5 +116,5 @@ $ rpm install
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
 
 ```
-$ rpm uninstall <user or organization>/<repository>[@tag]
+$ rpm uninstall <user or organization>/<repository>
 ```
