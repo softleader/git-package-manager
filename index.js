@@ -9,28 +9,21 @@ const entry = Object.keys(pjson.bin)[0];
 
 program
   .command('remote')
-  .description('Set remote & token')
+  .description('Save GitHub remote & access token')
   .action(remote.add);
 
 program.command('init')
-  .description('Set init yaml')
+  .description('Interactively create a package.yaml file')
   .action(config.init);
-
-// program
-//   .command('search [repository]')
-//   .description('Searches repository in remotes')
-//   .action(remote.search);
 
 program
   .command('install [repository...]')
-  // .option('--save', 'save changes to package.yaml', false)
-  .description('Install repository')
+  .description('Install a repository <user or organization>/<repository>[@tag]')
   .action(dependencies.install);
 
 program
   .command('uninstall <repository...>')
-  // .option('--save', 'save changes to package.yaml', false)
-  .description('Uninstall repository')
+  .description('Remove a repository <user or organization>/<repository>[@tag]')
   .action(dependencies.uninstall);
 
 program
