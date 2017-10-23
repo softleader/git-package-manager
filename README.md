@@ -12,20 +12,33 @@ $ cd repository-package-manager
 $ npm install -g
 ```
 
-## Features
-
-- `$ rpm remote --token <token> <user...>` - to save user/organization & GitHub access token
-- `$ rpm search [repo]` - to serch repository on regiested user/organization's github, shows branches & tags
-- `$ rpm init` - initial `package.yaml` & `.gitignore`
-- `$ rpm install --save [repo...]` - to clone repo & save to `package.yaml`
-- `$ rpm install` - to clone all repo by `package.yaml`
-- `$ rpm uninstall --save <repo...>` - remove the repositories & save to `package.yaml`
-
 ## Usage
 
 ![](./doc/overview.svg)
 
+```
+$ rpm --help
 
+  Usage: rpm [options] [command]
+
+
+  Options:
+
+    -V, --version  output the version number
+    -h, --help     output usage information
+
+
+  Commands:
+
+    remote                     Save GitHub remote & access token
+    init                       Interactively create a package.yaml file
+    install [repository...]    Install a repository <user or organization>/<repository>[@tag]
+    uninstall <repository...>  Remove a repository <user or organization>/<repository>[@tag]
+    *
+
+  https://github.com/softleader/repository-package-manager#readme
+```
+  
 ### remote
 
 當你要操作 private repository 前, 你必須要加好 remote 及其 access token:
