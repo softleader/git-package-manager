@@ -36,8 +36,8 @@ $ rpm --help
 
     remote [options] [remote...]  Save GitHub remote & access token
     init                       Interactively create a package.yaml file
-    install [repository...]    Install a repository <user or organization>/<repository>[@tag]
-    uninstall <repository...>  Remove a repository <user or organization>/<repository>
+    install [repository...]    Install a repository <owner>/<repository>[@tag]
+    uninstall <repository...>  Remove a repository <owner>/<repository>
     *
 
   https://github.com/softleader/repository-package-manager#readme
@@ -84,8 +84,8 @@ name: my-project
 version: 1.0.0
 description: demo
 dependencies:
-  - {user or organization}/{repository}: {tag}
-  - ...
+  - {owner}/{repository}: {tag}
+  - {owner}/{repository}: {tag}
 ```
 
 我們使用跟 npm 相同的 [node-semver](https://github.com/npm/node-semver) library 做 *{tag}*  的 parsing, 因此你可以:
@@ -101,7 +101,7 @@ dependencies:
 安裝指定 repository 及其版本
 
 ```
-$ rpm install <user or organization>/<repository>[@tag]
+$ rpm install <owner>/<repository>[@tag]
 ```
 
 會將指定 repository 的 clone 到 *repositories/* 下, 並 checkout 到指定 tag, 也會在 `package.yaml` 中加上該 dependencies 資訊, 目錄結構將呈現: 
@@ -127,5 +127,5 @@ $ rpm install
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
 
 ```
-$ rpm uninstall <user or organization>/<repository>
+$ rpm uninstall <owner>/<repository>
 ```

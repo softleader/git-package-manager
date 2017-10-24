@@ -19,12 +19,13 @@ program.command('init')
 
 program
   .command('install [repository...]')
-  .description('Install a repository <user or organization>/<repository>[@tag]')
+  .description('Install a repository <owner>/<repository>[@tag]')
+  .option('-c, --contents <path>', 'Only checkout the contents of a file in each repository')
   .action(dependencies.install);
 
 program
   .command('uninstall <repository...>')
-  .description('Remove a repository <user or organization>/<repository>')
+  .description('Remove a repository <owner>/<repository>')
   .action(dependencies.uninstall);
 
 program
