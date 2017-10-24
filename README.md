@@ -34,7 +34,7 @@ $ rpm --help
 
   Commands:
 
-    remote [options] [remote...]       Save GitHub remote & access token
+    remote [options] [owners...]       Save GitHub remote owner & access token
     init                               Interactively create a package.yaml file
     install [options] [repository...]  Install a repository <owner>/<repository>[@tag]
     uninstall <repository...>          Remove a repository <owner>/<repository>
@@ -49,7 +49,7 @@ $ rpm --help
 
 ```
 $ rpm remote
-? name: softleader
+? owner: softleader
 ? token: ooo
 ```
 
