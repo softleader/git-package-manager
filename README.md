@@ -4,7 +4,11 @@ rpm is the repository package manager for GitHub, inspired by npm
 
 ## Install
 
-Clone and install via npm
+```
+$ npm install git@github.com:softleader/repository-package-manager.git
+```
+
+or build from suorce code:
 
 ```
 $ git clone git@github.com:softleader/repository-package-manager.git
