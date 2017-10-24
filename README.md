@@ -34,10 +34,10 @@ $ rpm --help
 
   Commands:
 
-    remote [options] [remote...]  Save GitHub remote & access token
-    init                       Interactively create a package.yaml file
-    install [repository...]    Install a repository <owner>/<repository>[@tag]
-    uninstall <repository...>  Remove a repository <owner>/<repository>
+    remote [options] [remote...]       Save GitHub remote & access token
+    init                               Interactively create a package.yaml file
+    install [options] [repository...]  Install a repository <owner>/<repository>[@tag]
+    uninstall <repository...>          Remove a repository <owner>/<repository>
     *
 
   https://github.com/softleader/repository-package-manager#readme
