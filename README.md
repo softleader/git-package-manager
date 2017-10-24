@@ -122,12 +122,12 @@ $ rpm install <owner>/<repository>[@tag]
 $ rpm install
 ```
 
-#### -c, --contents
+#### -c, --contents <path>
 
 每次 install 預設模式會 clone 出完整的 repository 內容, 如果有指定檔案內容, 則只會 clone 出指定的檔案, 以大幅的加速 install 時間
 
 ```
-$ npm install -c Containerfile -c README.md -c another-file
+$ npm install -c Containerfile -c README.md -c path-to-another-file
 ```
 
 ### uninstall
