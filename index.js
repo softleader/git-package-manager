@@ -7,6 +7,12 @@ const dependencies = require('./lib/dependencies');
 const config = require('./lib/config');
 const entry = Object.keys(pjson.bin)[0];
 
+
+function collect(val, collection) {
+  collection.push(val);
+  return collection;
+}
+
 program
   .command('remote [remote...]')
   .option('-t, --token [token]', 'Access token for remotes')
@@ -20,7 +26,7 @@ program.command('init')
 program
   .command('install [repository...]')
   .description('Install a repository <owner>/<repository>[@tag]')
-  .option('-c, --contents <path>', 'Only checkout the contents of a file in each repository')
+  .option('-c, --contents <path>', 'Only checkout the contents of a file in each repository', collect, [])
   .action(dependencies.install);
 
 program
