@@ -34,7 +34,7 @@ $ rpm --help
 
   Commands:
 
-    remote [options] [remote...]       Save GitHub remote & access token
+    remote [options] [owners...]       Save GitHub remote owner & access token
     init                               Interactively create a package.yaml file
     install [options] [repository...]  Install a repository <owner>/<repository>[@tag]
     uninstall <repository...>          Remove a repository <owner>/<repository>
@@ -49,7 +49,7 @@ $ rpm --help
 
 ```
 $ rpm remote
-? name: softleader
+? owner: softleader
 ? token: ooo
 ```
 
@@ -126,15 +126,15 @@ $ rpm install <owner>/<repository>[@tag]
 $ rpm install
 ```
 
-#### -c, --contents
+####  -c, --contents \<path>
 
-指定檔案模式, install 時只會 clone 指定的檔案, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
+指定檔案內容, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
 
 ```
 $ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
 ```
 
-執行後就只會有指定檔案
+執行後就只會有指定的檔案內容
 
 ```
 .
@@ -149,7 +149,7 @@ $ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
 
 #### -F, --filtering
 
-在 `package.yaml` 中定義在 filtering 區塊的變數, 會在 [install 指定檔案模式](#-c---contents) 時 **(不會作用在完整 clone 的模式)**, 自動的取代檔案的內容
+在 `package.yaml` 中定義在 filtering 區塊的變數, 會在 [install 指定檔案內容](#-c---contents-path) 時 **(不會作用在完整 clone)**, 自動的取代檔案的內容
 
 ```yaml
 # package.yaml
