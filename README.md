@@ -100,55 +100,6 @@ filtering:
 
 > 建議研讀 [node-semver#readme](https://github.com/npm/node-semver#readme) 了解更多的控制
 
-#### filtering 
-
-在這邊定義的變數, 會在 [install 指定檔案模式](#-c---contents) 時 **(不會作用在完整 clone 的模式)**, 自動的取代檔案的內容
-
-```yaml
-# package.yaml
-
-...
-dependencies:
-  - owner/my-project: v1.0.0
-filtering:
-  - TAG: ${tag}
-  - name: Matt
-```
-
-在檔案的內容中, 使用 `${...}` 來宣告變數, 例如在 repository 的根目錄下有 `hello.txt`:
-
-```
-Hello ${name} @ @TAG@
-```
-
-接著執行:
-
-```
-$ rpm install -c hello.txt
-```
-
-則 `hello.txt` 將會被 clone 在:
-
-```
-.
-├── package.yaml
-└── repositories
-    └── my-project
-        └── hello.txt
-```
-
-且內容將轉變為:
-
-```
-Hello Matt @ v1.0.0
-```
-
-另外我們已經也預設提供了下述變數:
-
-- `${owner}` - repository onwer
-- `${repo}` - repository name
-- `${tag}` - repository tag
-
 ### install
 
 安裝指定 repository 及其版本
@@ -195,6 +146,55 @@ $ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
             └── asciidoc
                 └── template.adoc
 ```
+
+#### -F, --filtering
+
+在 `package.yaml` 中定義在 filtering 區塊的變數, 會在 [install 指定檔案模式](#-c---contents) 時 **(不會作用在完整 clone 的模式)**, 自動的取代檔案的內容
+
+```yaml
+# package.yaml
+
+...
+dependencies:
+  - owner/my-project: v1.0.0
+filtering:
+  - TAG: ${tag}
+  - name: Matt
+```
+
+在檔案的內容中, 使用 `${...}` 來宣告變數, 例如在 repository 的根目錄下有 `hello.txt`:
+
+```
+Hello ${name} @ @TAG@
+```
+
+接著執行:
+
+```
+$ rpm install -F -c hello.txt
+```
+
+則 `hello.txt` 將會被 clone 在:
+
+```
+.
+├── package.yaml
+└── repositories
+    └── my-project
+        └── hello.txt
+```
+
+且內容將轉變為:
+
+```
+Hello Matt @ v1.0.0
+```
+
+另外我們已經也預設提供了下述變數:
+
+- `${owner}` - repository onwer
+- `${repo}` - repository name
+- `${tag}` - repository tag
 
 ### uninstall
 

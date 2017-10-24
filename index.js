@@ -26,7 +26,8 @@ program.command('init')
 program
   .command('install [repository...]')
   .description('Install a repository <owner>/<repository>[@tag]')
-  .option('-c, --contents <path>', 'Only checkout the contents of a file in each repository', collect, [])
+  .option('-c, --contents <path>', 'specify the contents of a file to retrieve in each repository', collect, [])
+  .option('-F, --filtering', 'activete content filtering, only applies to contents of specifying files')
   .action(dependencies.install);
 
 program
