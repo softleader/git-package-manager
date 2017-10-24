@@ -14,9 +14,9 @@ function collect(val, collection) {
 }
 
 program
-  .command('remote [remote...]')
+  .command('remote [owners...]')
   .option('-t, --token [token]', 'Access token for remotes')
-  .description('Save GitHub remote & access token')
+  .description('Save GitHub remote owner & access token')
   .action(remote.add);
 
 program.command('init')
