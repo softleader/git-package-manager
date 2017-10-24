@@ -94,6 +94,8 @@ dependencies:
 - 指定 range: `v1.0.x` := `>=v1.0.0 <v1.1.0`
 - 自定義 range: `>=v1.0.0 <v1.1.7`
 
+當指定 range 時, 我們會試著找到符合的 tags 中最後的一版作為 install 的目標
+
 > 建議研讀 [node-semver#readme](https://github.com/npm/node-semver#readme) 了解更多的控制
 
 ### install
