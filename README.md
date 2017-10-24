@@ -108,6 +108,8 @@ filtering:
 # package.yaml
 
 ...
+dependencies:
+  - some-owner/my-package: v1.0.0
 filtering:
   - TAG: ${tag}
   - name: Matt
@@ -116,7 +118,7 @@ filtering:
 在檔案的內容中, 使用 `${...}` 來宣告變數, 例如在 repository 的根目錄下有 `hello.txt`:
 
 ```
-Hello ${name}
+Hello ${name} @ @TAG@
 ```
 
 接著執行:
@@ -138,7 +140,7 @@ $ rpm install -c hello.txt
 且內容將轉變為:
 
 ```
-Hello Matt
+Hello Matt @ v1.0.0
 ```
 
 另外我們已經也預設提供了下述變數:
