@@ -67,7 +67,7 @@ $ rpm remote --token ooo softleader softleader-project
 
 ### init
 
-法以互動式的指令產生 `package.yaml`
+以互動式的指令產生 `package.yaml`
 
 ```
 $ rpm init
