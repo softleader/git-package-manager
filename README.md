@@ -1,6 +1,6 @@
 # repository-package-manager
 
-rpm is the repository package manager for GitHub, inspired by npm
+rpm is the repository package manager for GitHub, inspired by npm & maven
 
 ## Install
 
@@ -86,6 +86,8 @@ description: demo
 dependencies:
   - {owner}/{repository}: {tag}
   - {owner}/{repository}: {tag}
+filtering:
+  - TAG: ${tag}
 ```
 
 我們使用跟 npm 相同的 [node-semver](https://github.com/npm/node-semver) library 做 *{tag}*  的 parsing, 因此你可以:
@@ -97,6 +99,10 @@ dependencies:
 當指定 range 時, 我們會試著找到符合的 tags 中最後的一版作為 install 的目標
 
 > 建議研讀 [node-semver#readme](https://github.com/npm/node-semver#readme) 了解更多的控制
+
+#### filtering 
+
+在這邊定義的變數, 會在 install 指定檔案模式下, 自動的取代檔案內容
 
 ### install
 
@@ -126,7 +132,7 @@ $ rpm install
 
 #### -c, --contents
 
-每次 install 預設模式會 clone 出完整的 repository 內容, 如果有指定檔案內容, 則只會 clone 出指定的檔案, 以大幅的加速 install 時間
+指定檔案模式, install 時只會 clone 指定的檔案, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
 
 ```
 $ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
