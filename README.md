@@ -127,7 +127,20 @@ $ rpm install
 每次 install 預設模式會 clone 出完整的 repository 內容, 如果有指定檔案內容, 則只會 clone 出指定的檔案, 以大幅的加速 install 時間
 
 ```
-$ rpm install -c Containerfile -c docs/asciidoc/template.adoc -c path-to-another-file
+$ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
+```
+
+執行後就只會有指定檔案
+
+```
+.
+├── package.yaml
+└── repositories
+    └── my-project
+        ├── Containerfile
+        └── docs
+            └── asciidoc
+                └── template.adoc
 ```
 
 ### uninstall
