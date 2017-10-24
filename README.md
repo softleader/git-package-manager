@@ -126,7 +126,7 @@ $ rpm install <owner>/<repository>[@tag]
 $ rpm install
 ```
 
-#### -c, --contents
+####  -c, --contents \<path>
 
 指定檔案模式, install 時只會 clone 指定的檔案, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
 
