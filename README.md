@@ -109,7 +109,7 @@ filtering:
 
 ...
 dependencies:
-  - some-owner/my-package: v1.0.0
+  - owner/my-project: v1.0.0
 filtering:
   - TAG: ${tag}
   - name: Matt
