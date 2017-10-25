@@ -27,6 +27,7 @@
     "inquirer": "^3.3.0",
     "js-yaml": "^3.10.0",
     "nodegit": "^0.20.2",
+    "octonode": "^0.9.1",
     "path": "^0.12.7",
     "promisify": "0.0.3",
     "promisify-node": "^0.4.0",
