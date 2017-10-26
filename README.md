@@ -102,6 +102,23 @@ filtering:
 
 ### install
 
+```
+rpm install --help
+
+  Usage: install [options] [repository...]
+
+  Install a repository <owner>/<repository>[@tag]
+
+
+  Options:
+
+    -c, --contents <path>     specify the contents of a file to retrieve in each repository
+    -F, --filtering           activete content filtering, only applies to contents of specifying files
+    -y, --yaml-file <path>    path to a YAML file, default 'package.yaml'
+    -d, --install-dir <path>  path to directory to install, default 'repositories'
+    -h, --help                output usage information
+```
+
 安裝指定 repository 及其版本
 
 ```
@@ -196,6 +213,14 @@ Hello Matt @ v1.0.0
 - `${repo}` - repository name
 - `${tag}` - repository tag
 
+#### -y, --yaml-file \<path>
+
+指定要讀取的 YAML 檔案位置, 預設: `package.yaml`
+
+#### -d, --install-dir \<path>
+
+指定安裝的目錄, 預設: `repositories`
+
 ### uninstall
 
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
@@ -203,3 +228,5 @@ Hello Matt @ v1.0.0
 ```
 $ rpm uninstall <owner>/<repository>
 ```
+
+> 如果安裝時, 有下 `--yaml-file` 或 `--install-dir` 等參數, 在反安裝時也要記得給參數
