@@ -1,6 +1,6 @@
 {
   "name": "repository-package-manager",
-  "version": "1.0.0",
+  "version": "17.10.1",
   "description": "rpm is the repository package manager for GitHub, inspired by npm",
   "bin": {
     "rpm": "index.js"

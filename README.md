@@ -87,7 +87,7 @@ dependencies:
   - {owner}/{repository}: {tag}
   - {owner}/{repository}: {tag}
 filtering:
-  - TAG: ${tag}
+  TAG: ${tag}
 ```
 
 我們使用跟 npm 相同的 [node-semver](https://github.com/npm/node-semver) library 做 *{tag}*  的 parsing, 因此你可以:
@@ -175,8 +175,8 @@ $ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
 dependencies:
   - owner/my-project: v1.0.0
 filtering:
-  - TAG: ${tag}
-  - name: Matt
+  TAG: ${tag}
+  name: Matt
 ```
 
 在檔案的內容中, 使用 `${...}` 來宣告變數, 例如在 repository 的根目錄下有 `hello.txt`:
