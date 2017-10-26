@@ -103,7 +103,7 @@ filtering:
 ### install
 
 ```
-rpm install --help
+$ rpm install --help
 
   Usage: install [options] [repository...]
 
