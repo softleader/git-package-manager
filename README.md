@@ -1,18 +1,18 @@
-# repository-package-manager
+# github-package-manager
 
-rpm is the repository package manager for GitHub, inspired by npm & maven
+gpm is the GitHub package manager, inspired by npm & maven
 
 ## Install
 
 ```
-$ npm install softleader/repository-package-manager -g
+$ npm install softleader/github-package-manager -g
 ```
 
 or build from suorce code:
 
 ```
-$ git clone git@github.com:softleader/repository-package-manager.git
-$ cd repository-package-manager
+$ git clone git@github.com:softleader/github-package-manager.git
+$ cd github-package-manager
 $ npm install -g
 ```
 
@@ -21,9 +21,9 @@ $ npm install -g
 ![](./doc/overview.svg)
 
 ```
-$ rpm --help
+$ gpm --help
 
-  Usage: rpm [options] [command]
+  Usage: gpm [options] [command]
 
 
   Options:
@@ -40,7 +40,7 @@ $ rpm --help
     uninstall <repository...>          Remove a repository <owner>/<repository>
     *
 
-  https://github.com/softleader/repository-package-manager#readme
+  https://github.com/softleader/github-package-manager#readme
 ```
   
 ### remote
@@ -48,21 +48,21 @@ $ rpm --help
 當你要操作 private repository 前, 你必須要加好 remote 及其 access token:
 
 ```
-$ rpm remote
+$ gpm remote
 ? owner: softleader
 ? token: ooo
 ```
 
 *Access token* 產生方式請參考 [Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), 請確認要給予 ***repo*** 的所有權限
 
-產生好了以後會在 home 產生 *.rpm* 名稱的檔案, 你可以備份此檔已保留加過的 token
+產生好了以後會在 home 產生 *.gpm* 名稱的檔案, 你可以備份此檔已保留加過的 token
 
 > 如果是 public repository 就不需要加入 remote
 
 如果是在 pipeline 中或任何無法以互動式的指令加入 token 的情況下, 必須改成執行:
 
 ```
-$ rpm remote --token ooo softleader softleader-project
+$ gpm remote --token ooo softleader softleader-project
 ```
 
 ### init
@@ -70,7 +70,7 @@ $ rpm remote --token ooo softleader softleader-project
 以互動式的指令產生 `package.yaml`
 
 ```
-$ rpm init
+$ gpm init
 ? name: my-project
 ? version: 1.0.0
 ? description: demo
@@ -103,7 +103,7 @@ filtering:
 ### install
 
 ```
-$ rpm install --help
+$ gpm install --help
 
   Usage: install [options] [repository...]
 
@@ -122,7 +122,7 @@ $ rpm install --help
 安裝指定 repository 及其版本
 
 ```
-$ rpm install <owner>/<repository>[@tag]
+$ gpm install <owner>/<repository>[@tag]
 ```
 
 會將指定 repository 的 clone 到 *repositories/* 下, 並 checkout 到指定 tag, 也會在 `package.yaml` 中加上該 dependencies 資訊, 目錄結構將呈現: 
@@ -140,7 +140,7 @@ $ rpm install <owner>/<repository>[@tag]
 如果 install 後面沒有接任何 repository, 會將 `package.yaml` 中所有的 repository 都 clone 到 *repositories/* 下
 
 ```
-$ rpm install
+$ gpm install
 ```
 
 ####  -c, --contents \<path>
@@ -148,7 +148,7 @@ $ rpm install
 指定檔案內容, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
 
 ```
-$ rpm install -c Containerfile -c docs/asciidoc/template.adoc ...
+$ gpm install -c Containerfile -c docs/asciidoc/template.adoc ...
 ```
 
 執行後就只會有指定的檔案內容
@@ -188,7 +188,7 @@ Hello ${name} @ @TAG@
 接著執行:
 
 ```
-$ rpm install -F -c hello.txt
+$ gpm install -F -c hello.txt
 ```
 
 則 `hello.txt` 將會被 clone 在:
@@ -225,7 +225,7 @@ Hello Matt @ v1.0.0
 ```
 # git:<onwer>/<repo>/<path-to-yaml>[@branch or tag]
 
-$ rpm install -y git:softleader-product/softleader-package/package.yaml@hotains
+$ gpm install -y git:softleader-product/softleader-package/package.yaml@hotains
 ```
 
 則會先抓取 [softleader-product/softleader-package](https://github.com/softleader-product/softleader-package/tree/hotains) 中的 package.yaml 到當前目錄下再執行 install
@@ -239,7 +239,7 @@ $ rpm install -y git:softleader-product/softleader-package/package.yaml@hotains
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
 
 ```
-$ rpm uninstall <owner>/<repository>
+$ gpm uninstall <owner>/<repository>
 ```
 
 > 如果安裝時, 有下 `--yaml-file` 或 `--install-dir` 等參數, 在反安裝時也要記指定參數

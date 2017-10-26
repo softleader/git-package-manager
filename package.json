@@ -1,9 +1,9 @@
 {
-  "name": "repository-package-manager",
-  "version": "17.10.2",
-  "description": "rpm is the repository package manager for GitHub, inspired by npm",
+  "name": "github-package-manager",
+  "version": "17.10.3",
+  "description": "gpm is the GitHub package manager, inspired by npm & maven",
   "bin": {
-    "rpm": "index.js"
+    "gpm": "index.js"
   },
   "preferGlobal": true,
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softleader/repository-package-manager.git"
+    "url": "git+https://github.com/softleader/github-package-manager.git"
   },
   "author": "Matt S.Y. Ho",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/softleader/repository-package-manager/issues"
+    "url": "https://github.com/softleader/github-package-manager/issues"
   },
-  "homepage": "https://github.com/softleader/repository-package-manager#readme",
+  "homepage": "https://github.com/softleader/github-package-manager#readme",
   "dependencies": {
     "commander": "^2.11.0",
     "fs-extra": "^4.0.2",
