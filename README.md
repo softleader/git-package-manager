@@ -59,7 +59,7 @@ $ rpm remote
 
 > 如果是 public repository 就不需要加入 remote
 
-如果今天是在 pipeline 中或任何無法以互動式的指令加入 token 的情況下, 必須改成執行:
+如果是在 pipeline 中或任何無法以互動式的指令加入 token 的情況下, 必須改成執行:
 
 ```
 $ rpm remote --token ooo softleader softleader-project
