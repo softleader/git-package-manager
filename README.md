@@ -217,6 +217,19 @@ Hello Matt @ v1.0.0
 
 指定要讀取的 YAML 檔案位置, 預設: `package.yaml`
 
+##### GitHub supports
+
+此指令也支援 GitHub 上的檔案:
+
+
+```
+# git:<onwer>/<repo>/<path-to-yaml>[@branch or tag]
+
+$ rpm install -y git:softleader-product/softleader-package/package.yaml@hotains
+```
+
+則會先抓取 [softleader-product/softleader-package](https://github.com/softleader-product/softleader-package/tree/hotains) 中的 package.yaml 到當前目錄下再執行 install
+
 #### -d, --install-dir \<path>
 
 指定安裝的目錄, 預設: `repositories`
