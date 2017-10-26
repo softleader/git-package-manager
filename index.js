@@ -8,7 +8,7 @@ const config = require('./lib/config');
 const entry = Object.keys(pjson.bin)[0];
 
 
-function collect(val, collection) {
+const collect = (val, collection) => {
   collection.push(val);
   return collection;
 }
@@ -28,11 +28,15 @@ program
   .description('Install a repository <owner>/<repository>[@tag]')
   .option('-c, --contents <path>', 'specify the contents of a file to retrieve in each repository', collect, [])
   .option('-F, --filtering', 'activete content filtering, only applies to contents of specifying files')
+  .option('-y, --yaml-file <path>', 'path to a YAML file, default \'package.yaml\'', 'package.yaml')
+  .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
   .action(dependencies.install);
 
 program
   .command('uninstall <repository...>')
   .description('Remove a repository <owner>/<repository>')
+  .option('-y, --yaml-file <path>', 'Path to a YAML file, default package.yaml', 'package.yaml')
+  .option('--install-dir <path>', 'Path to install dir, default repositories', 'repositories')
   .action(dependencies.uninstall);
 
 program
