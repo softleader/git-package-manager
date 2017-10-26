@@ -1,18 +1,18 @@
-# github-package-manager
+# git-package-manager
 
-gpm is the GitHub package manager, inspired by npm & maven
+gpm is the git package manager, inspired by npm & maven
 
 ## Install
 
 ```
-$ npm install softleader/github-package-manager -g
+$ npm install softleader/git-package-manager -g
 ```
 
 or build from suorce code:
 
 ```
-$ git clone git@github.com:softleader/github-package-manager.git
-$ cd github-package-manager
+$ git clone git@github.com:softleader/git-package-manager.git
+$ cd git-package-manager
 $ npm install -g
 ```
 
@@ -40,7 +40,7 @@ $ gpm --help
     uninstall <repository...>          Remove a repository <owner>/<repository>
     *
 
-  https://github.com/softleader/github-package-manager#readme
+  https://github.com/softleader/git-package-manager#readme
 ```
   
 ### remote

@@ -1,7 +1,7 @@
 {
-  "name": "github-package-manager",
+  "name": "git-package-manager",
   "version": "17.10.3",
-  "description": "gpm is the GitHub package manager, inspired by npm & maven",
+  "description": "gpm is the git package manager, inspired by npm & maven",
   "bin": {
     "gpm": "index.js"
   },
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softleader/github-package-manager.git"
+    "url": "git+https://github.com/softleader/git-package-manager.git"
   },
   "author": "Matt S.Y. Ho",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/softleader/github-package-manager/issues"
+    "url": "https://github.com/softleader/git-package-manager/issues"
   },
-  "homepage": "https://github.com/softleader/github-package-manager#readme",
+  "homepage": "https://github.com/softleader/git-package-manager#readme",
   "dependencies": {
     "commander": "^2.11.0",
     "fs-extra": "^4.0.2",
