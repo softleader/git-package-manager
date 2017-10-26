@@ -113,7 +113,7 @@ $ rpm install --help
   Options:
 
     -c, --contents <path>     specify the contents of a file to retrieve in each repository
-    -F, --filtering           activete content filtering, only applies to contents of specifying files
+    -F, --filtering           activete content filtering, only applies to contents of specifyied files
     -y, --yaml-file <path>    path to a YAML file, default 'package.yaml'
     -d, --install-dir <path>  path to directory to install, default 'repositories'
     -h, --help                output usage information
