@@ -229,4 +229,4 @@ Hello Matt @ v1.0.0
 $ rpm uninstall <owner>/<repository>
 ```
 
-> 如果安裝時, 有下 `--yaml-file` 或 `--install-dir` 等參數, 在反安裝時也要記得給參數
+> 如果安裝時, 有下 `--yaml-file` 或 `--install-dir` 等參數, 在反安裝時也要記指定參數
