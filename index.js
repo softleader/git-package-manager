@@ -36,7 +36,7 @@ program
   .command('uninstall <repository...>')
   .description('Remove a repository <owner>/<repository>')
   .option('-y, --yaml-file <path>', 'Path to a YAML file, default package.yaml', 'package.yaml')
-  .option('--install-dir <path>', 'Path to install dir, default repositories', 'repositories')
+  .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
   .action(dependencies.uninstall);
 
 program
