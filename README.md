@@ -1,6 +1,6 @@
 # git-package-manager
 
-gpm is the git package manager, inspired by npm & maven
+gpm is the package manager for git, inspired by npm & maven
 
 ## Install
 
