@@ -11,7 +11,7 @@ const entry = Object.keys(pjson.bin)[0];
 const collect = (val, collection) => {
   collection.push(val);
   return collection;
-}
+};
 
 program
   .command('remote [owners...]')
@@ -30,6 +30,7 @@ program
   .option('-F, --filtering', 'activete content filtering, only applies to contents of specifyied files')
   .option('-y, --yaml-file <path>', 'path to a YAML file, default \'package.yaml\'', 'package.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
+  .option('-g, --group <group>', 'repository\'s install group, default no group', '')
   .action(dependencies.install);
 
 program
@@ -37,6 +38,7 @@ program
   .description('Remove a repository <owner>/<repository>')
   .option('-y, --yaml-file <path>', 'Path to a YAML file, default package.yaml', 'package.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
+  .option('-g, --group <group>', 'repository\'s uninstall group, default no group', '')
   .action(dependencies.uninstall);
 
 program
