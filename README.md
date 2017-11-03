@@ -62,7 +62,7 @@ $ gpm remote
 如果是在 pipeline 中或任何無法以互動式的指令加入 token 的情況下, 必須改成執行:
 
 ```
-$ gpm remote --token ooo softleader softleader-project
+$ gpm remote --token ooo softleader softleader-product
 ```
 
 ### init
