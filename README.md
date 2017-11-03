@@ -53,6 +53,8 @@ $ gpm remote
 ? token: ooo
 ```
 
+> owner: softleader => 這樣就可以存取 softleader 底下的 repo
+
 *Access token* 產生方式請參考 [Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/), 請確認要給予 ***repo*** 的所有權限
 
 產生好了以後會在 home 產生 *.gpm* 名稱的檔案, 你可以備份此檔已保留加過的 token
