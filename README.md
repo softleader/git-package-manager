@@ -236,6 +236,30 @@ $ gpm install -y git:softleader-product/softleader-package/package.yaml#hotains
 
 指定安裝的目錄, 預設: `repositories`
 
+#### -g, --group \<group>
+
+指定安裝的 group，例如執行 `gpm install -g security owner/my-project`，package.yaml 將會產生如下格式
+
+```xml
+dependencies:
+  security:
+    - owner/my-project: v1.0.0
+filtering:
+  TAG: ${tag}
+  name: Matt
+```
+
+安裝的目錄也會依 group 區分
+
+```
+.
+├── package.yaml
+└── repositories
+    └── security
+        └── my-project
+            └── ...
+```
+
 ### uninstall
 
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
