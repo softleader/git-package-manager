@@ -227,7 +227,7 @@ Hello Matt @ v1.0.0
 ```
 # github:<onwer>/<repo>/<path-to-yaml>[#branch or tag]
 
-$ gpm install -y git:softleader-product/softleader-package/package.yaml#hotains
+$ gpm install -y github:softleader-product/softleader-package/package.yaml#hotains
 ```
 
 則會先抓取 [softleader-product/softleader-package](https://github.com/softleader-product/softleader-package/tree/hotains) 中的 package.yaml 到當前目錄下再執行 install
