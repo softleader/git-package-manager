@@ -225,7 +225,7 @@ Hello Matt @ v1.0.0
 
 
 ```
-# git:<onwer>/<repo>/<path-to-yaml>[#branch or tag]
+# github:<onwer>/<repo>/<path-to-yaml>[#branch or tag]
 
 $ gpm install -y git:softleader-product/softleader-package/package.yaml#hotains
 ```

@@ -1,6 +1,6 @@
 {
   "name": "git-package-manager",
-  "version": "17.10.3",
+  "version": "17.11.1",
   "description": "gpm is the package manager for git, inspired by npm & maven",
   "bin": {
     "gpm": "index.js"
