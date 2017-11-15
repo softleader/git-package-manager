@@ -109,7 +109,7 @@ $ gpm install --help
 
   Usage: install [options] [repository...]
 
-  Install a repository <owner>/<repository>[@tag]
+  Install repositories
 
 
   Options:
@@ -118,16 +118,24 @@ $ gpm install --help
     -F, --filtering           activete content filtering, only applies to contents of specifyied files
     -y, --yaml-file <path>    path to a YAML file, default 'package.yaml'
     -d, --install-dir <path>  path to directory to install, default 'repositories'
+    -g, --group <group>       repository's install group, default no group
     -h, --help                output usage information
+
+  Synopsis:
+
+    gpm install (with no args, in package dir)
+    gpm install <github owner>/<github repository>#[branch] (default branch: master)
+    gpm install <github owner>/<github repository>@<tag>
 ```
 
-安裝指定 repository 及其版本
+安裝指定 repository 及其 tag 或是 branch
 
 ```
-$ gpm install <owner>/<repository>[@tag]
+$ gpm install <github owner>/<github repository>#[branch] (default branch: master)
+$ gpm install <github owner>/<github repository>@<tag>
 ```
 
-會將指定 repository 的 clone 到 *repositories/* 下, 並 checkout 到指定 tag, 也會在 `package.yaml` 中加上該 dependencies 資訊, 目錄結構將呈現: 
+會將指定 repository 的 clone 到 *repositories/* 下, 並 checkout 到指定 tag 或是 branch, 也會在 `package.yaml` 中加上該 dependencies 資訊, 目錄結構將呈現: 
 
 ```
 .
@@ -150,7 +158,7 @@ $ gpm install
 指定檔案內容, 以大幅的加速 install 時間 (預設模式是 clone 出完整的 repository 內容)
 
 ```
-$ gpm install -c Containerfile -c docs/asciidoc/template.adoc ...
+$ gpm install -c Containerfile -c path/to/some-file.adoc ...
 ```
 
 執行後就只會有指定的檔案內容
@@ -161,9 +169,9 @@ $ gpm install -c Containerfile -c docs/asciidoc/template.adoc ...
 └── repositories
     └── my-project
         ├── Containerfile
-        └── docs
-            └── asciidoc
-                └── template.adoc
+        └── path
+            └── to
+                └── some-file.adoc
 ```
 
 #### -F, --filtering

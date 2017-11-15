@@ -25,7 +25,16 @@ program.command('init')
 
 program
   .command('install [repository...]')
-  .description('Install a repository <owner>/<repository>[@tag]')
+  .description('Install repositories')
+  .on('--help', () => {
+    console.log();
+    console.log('  Synopsis:')
+    console.log();
+    console.log('    %s install (with no args, in package dir)', entry);
+    console.log('    %s install <github owner>/<github repository>#[branch] (default branch: master)', entry);
+    console.log('    %s install <github owner>/<github repository>@<tag>', entry);
+    console.log();
+  })
   .option('-c, --contents <path>', 'specify the contents of a file to retrieve in each repository', collect, [])
   .option('-F, --filtering', 'activete content filtering, only applies to contents of specifyied files')
   .option('-y, --yaml-file <path>', 'path to a YAML file, default \'package.yaml\'', 'package.yaml')
@@ -43,7 +52,7 @@ program
 
 program
   .command('*')
-  .action(cmd => console.log('%s: \'' + cmd + '\' is not a valid command. See \'%s --help\'.', entry, entry));
+  .action(cmd => console.log('%s: \'%s\' is not a valid command. See \'%s --help\'.', entry, cmd, entry));
 
 program
   .on('--help', () => {
