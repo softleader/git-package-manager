@@ -124,15 +124,15 @@ $ gpm install --help
   Synopsis:
 
     gpm install (with no args, in package dir)
-    gpm install <github owner>/<github repository>#[branch] (default branch: master)
-    gpm install <github owner>/<github repository>@<tag>
+    gpm install <github owner>/<github repository>#[branch] (default master)
+    gpm install <github owner>/<github repository>[@tag] (default latest tag)
 ```
 
 安裝指定 repository 及其 tag 或是 branch
 
 ```
 $ gpm install <github owner>/<github repository>#[branch] (default branch: master)
-$ gpm install <github owner>/<github repository>@<tag>
+$ gpm install <github owner>/<github repository>[@tag] (default latest tag)
 ```
 
 會將指定 repository 的 clone 到 *repositories/* 下, 並 checkout 到指定 tag 或是 branch, 也會在 `package.yaml` 中加上該 dependencies 資訊, 目錄結構將呈現: 
@@ -274,7 +274,7 @@ filtering:
 移除已安裝的 repository 及其 `package.yaml` 中的資訊
 
 ```
-$ gpm uninstall <owner>/<repository>
+$ gpm uninstall <github owner>/<github repository>
 ```
 
 > 如果安裝時, 有下 `--yaml-file` 或 `--install-dir` 等參數, 在反安裝時也要記指定參數

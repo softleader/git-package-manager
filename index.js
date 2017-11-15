@@ -44,7 +44,7 @@ program
 
 program
   .command('uninstall <repository...>')
-  .description('Remove a repository <owner>/<repository>')
+  .description('Remove a repository <github owner>/<github repository>')
   .option('-y, --yaml-file <path>', 'Path to a YAML file, default package.yaml', 'package.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
   .option('-g, --group <group>', 'repository\'s uninstall group, default no group', '')
