@@ -28,7 +28,7 @@ program
   .description('Install repositories')
   .on('--help', () => {
     console.log();
-    console.log('  Synopsis:')
+    console.log('  Synopsis:');
     console.log();
     console.log('    %s install (with no args, in package dir)', entry);
     console.log('    %s install <github owner>/<github repository>#[branch] (default branch: master)', entry);
@@ -38,6 +38,7 @@ program
   .option('-c, --contents <path>', 'specify the contents of a file to retrieve in each repository', collect, [])
   .option('-F, --filtering', 'activete content filtering, only applies to contents of specifyied files')
   .option('-y, --yaml-file <path>', 'path to a YAML file, default \'package.yaml\'', 'package.yaml')
+  .option('-l, --yaml-lock-file <path>', 'path to a YAML lock file, default \'package-lock.yaml\'', 'package-lock.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
   .option('-g, --group <group>', 'repository\'s install group, default no group', '')
   .action(dependencies.install);
