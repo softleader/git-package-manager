@@ -1,6 +1,6 @@
 {
   "name": "git-package-manager",
-  "version": "17.11.3",
+  "version": "17.12.1",
   "description": "gpm is the package manager for git, inspired by npm & maven",
   "bin": {
     "gpm": "index.js"
@@ -26,13 +26,13 @@
     "homedir": "^0.6.0",
     "inquirer": "^3.3.0",
     "js-yaml": "^3.10.0",
-    "nodegit": "^0.20.2",
     "octonode": "^0.9.1",
     "path": "^0.12.7",
     "promisify": "0.0.3",
     "promisify-node": "^0.4.0",
     "request": "^2.83.0",
     "semver": "^5.4.1",
+    "simple-git": "^1.85.0",
     "string-format": "^0.5.0"
   }
 }
