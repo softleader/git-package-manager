@@ -12,7 +12,7 @@ RUN apk update \
   && git config --global user.name "rd" \
   && git config --global user.email rd@softleader.com.tw \
   && cd ${APP_HOME} \
-  && npm install -g --allow-root
+  && npm install -g
 
 VOLUME /app 
 WORKDIR /app
