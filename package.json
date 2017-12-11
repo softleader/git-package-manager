@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/softleader/git-package-manager#readme",
   "dependencies": {
+    "chalk": "^2.3.0",
     "commander": "^2.11.0",
     "fs-extra": "^4.0.2",
     "gh-got": "^6.0.0",
