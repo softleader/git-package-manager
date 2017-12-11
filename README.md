@@ -29,6 +29,7 @@ a2a47081658cfe506584d35ed88b7c60e3e8fae72a697943c6157524a1f2ee2f
 $ docker exec a2a4 gpm --version
 17.12.1
 ```
+`path/to/gpm-dir` is the root dir where you want `gpm` to access
 
 ## Usage
 
