@@ -6,7 +6,7 @@ gpm is the package manager for git, inspired by npm & maven
 
 ```
 $ npm install softleader/git-package-manager -g
-$ gpm -V
+$ gpm --version
 17.12.1
 ```
 
@@ -16,7 +16,7 @@ or build from suorce code:
 $ git clone git@github.com:softleader/git-package-manager.git
 $ cd git-package-manager
 $ npm install -g
-$ gpm -V
+$ gpm --version
 17.12.1
 ```
 
@@ -26,7 +26,7 @@ or run on Docker:
 $ docker run -itd -v path/to/gpm-dir:/app softleader/gpm
 a2a47081658cfe506584d35ed88b7c60e3e8fae72a697943c6157524a1f2ee2f
 
-$ docker exec a2a4 gpm -V
+$ docker exec a2a4 gpm --version
 17.12.1
 ```
 
