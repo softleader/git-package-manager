@@ -288,60 +288,7 @@ filtering:
 
 Extend 意指會將 `--yaml-file` 中的某些設定覆蓋掉，這邊是指定要覆蓋別人的 YAML 位置
 
-如:
-
-```yaml
-# main.yaml
-
-name: my-project
-version: 1.0.0
-description: My Project
-dependencies:
-    ...
-filtering:
-  REGISTRY: 'dev.domain:5000'
-  VOLUME: '/dev'
-  DEVOPS_OPTS: >-
-        -DdataSource.url=jdbc:sqlserver://dev.domain:1433;database=my-project
-        -DdataSource.username=sa
-```
-
-
-```yaml
-# uat-env.yaml
-
-description: My Project build for UAT
-filtering:
-  REGISTRY: 'uat.domain:5000'
-  VOLUME: '/uat'
-  DEVOPS_OPTS: >-
-        -DdataSource.url=jdbc:sqlserver://uat.domain:1433;database=my-project
-        -DdataSource.username=hello 
-        -DdataSource.password=world
-```
-
-這時如果指令下
-
-```sh
-$ gpm install -y main.yaml -e uat-env.yaml
-```
-
-最後結果為:
-
-```yaml
-name: my-project
-version: 1.0.0
-description: My Project build for UAT
-dependencies:
-    ...
-filtering:
-  REGISTRY: 'uat.domain:5000'
-  VOLUME: '/uat'
-  DEVOPS_OPTS: >-
-        -DdataSource.url=jdbc:sqlserver://uat.domain:1433;database=my-project
-        -DdataSource.username=hello 
-        -DdataSource.password=world
-```
+![](./doc/extend.svg)
 
 ### uninstall
 
