@@ -37,6 +37,7 @@ program
   })
   .option('-c, --contents <path>', 'specify the contents of a file to retrieve in each repository', collect, [])
   .option('-F, --filtering', 'activete content filtering, only applies to contents of specifyied files')
+  .option('-e, --extend <extend>', 'path to a extend YAML file')
   .option('-y, --yaml-file <path>', 'path to a YAML file, default \'package.yaml\'', 'package.yaml')
   .option('-l, --yaml-lock-file <path>', 'path to a YAML lock file, default \'package-lock.yaml\'', 'package-lock.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
