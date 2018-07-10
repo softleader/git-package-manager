@@ -28,6 +28,7 @@
     "homedir": "^0.6.0",
     "inquirer": "^3.3.0",
     "js-yaml": "^3.10.0",
+    "npm": "^6.1.0",
     "octonode": "^0.9.1",
     "path": "^0.12.7",
     "promisify": "0.0.3",
