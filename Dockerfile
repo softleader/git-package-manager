@@ -17,4 +17,4 @@ RUN apk update \
 VOLUME /app 
 WORKDIR /app
 
-CMD ["sh"]
+ENTRYPOINT [ "gpm" ]
