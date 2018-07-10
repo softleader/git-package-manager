@@ -22,16 +22,17 @@ $ gpm --version
 17.12.1
 ```
 
-or run on Docker:
+or run on Docker [recommend]:
 
 ```
-$ docker run -itd -v path/to/gpm-dir:/app softleader/gpm
-a2a47081658cfe506584d35ed88b7c60e3e8fae72a697943c6157524a1f2ee2f
-
-$ docker exec a2a4 gpm --version
+$ docker run --rm -it \
+    -v /path/to/gpm-dir:/app \
+    -v /path/to/.gpm:/root/.gpm \
+    softleader/gpm --version
 17.12.1
 ```
-`path/to/gpm-dir` is the root dir where you want `gpm` to access
+- `path/to/gpm-dir` - is the root dir where you want `gpm` to access
+- `path/to/.gpm` - is `.gpm` file on host
 
 ## Usage
 
