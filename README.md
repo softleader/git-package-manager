@@ -288,7 +288,7 @@ filtering:
 
 Extend 意指會將 `--yaml-file` 中的某些設定覆蓋掉，這邊是指定要覆蓋別人的 YAML 位置
 
-!(./doc/extend.svg)[]
+![](./doc/extend.svg)
 
 ### uninstall
 
