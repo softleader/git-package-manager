@@ -16,6 +16,8 @@ or build from suorce code:
 $ git clone git@github.com:softleader/git-package-manager.git
 $ cd git-package-manager
 $ npm install -g
+// in Ubuntu. you should add Link in /usr/bin
+/usr/bin$ sudo ln -s /usr/local/node-v8.11.1/bin/gpm gpm
 $ gpm --version
 17.12.1
 ```
