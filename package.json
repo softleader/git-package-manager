@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/softleader/git-package-manager#readme",
   "dependencies": {
+    "@octokit/rest": "^16.16.0",
     "chalk": "^2.3.0",
     "commander": "^2.11.0",
     "extend": "^3.0.1",
@@ -27,8 +28,9 @@
     "gh-got": "^6.0.0",
     "homedir": "^0.6.0",
     "inquirer": "^3.3.0",
+    "install": "^0.12.2",
     "js-yaml": "^3.10.0",
-    "npm": "^6.1.0",
+    "npm": "^6.8.0",
     "octonode": "^0.9.1",
     "path": "^0.12.7",
     "promisify": "0.0.3",
