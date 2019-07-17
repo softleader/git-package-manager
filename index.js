@@ -42,6 +42,7 @@ program
   .option('-l, --yaml-lock-file <path>', 'path to a YAML lock file, default \'package-lock.yaml\'', 'package-lock.yaml')
   .option('-d, --install-dir <path>', 'path to directory to install, default \'repositories\'', 'repositories')
   .option('-g, --group <group>', 'repository\'s install group, default no group', '')
+  .option('-a, --analyze-tag <true or false>', 'analyze tag range (default: false)', bool, false)
   .action(dependencies.install);
 
 program
