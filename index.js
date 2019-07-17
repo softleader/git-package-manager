@@ -7,6 +7,9 @@ const dependencies = require('./lib/dependencies');
 const config = require('./lib/config');
 const entry = Object.keys(pjson.bin)[0];
 
+function bool(val) {
+  return val == 'true';
+}
 
 const collect = (val, collection) => {
   collection.push(val);
